@@ -1,0 +1,148 @@
+package model
+
+var heroPool = []Hero{
+		// Tier 1: Novices & Commoners
+		{Base: Base{Name: "Farmhand", HP: 20, Att: 3, Def: 2}, Mana: 0},
+		{Base: Base{Name: "Street Urchin", HP: 15, Att: 3, Def: 1}, Mana: 0},
+		{Base: Base{Name: "Novice Healer", HP: 16, Att: 1, Def: 1}, Mana: 25},
+		{Base: Base{Name: "Pickpocket", HP: 18, Att: 4, Def: 1}, Mana: 0},
+		{Base: Base{Name: "Apprentice Mage", HP: 15, Att: 2, Def: 1}, Mana: 20},
+		{Base: Base{Name: "Militia", HP: 25, Att: 4, Def: 3}, Mana: 0},
+		{Base: Base{Name: "Woodsman", HP: 28, Att: 5, Def: 2}, Mana: 0},
+		{Base: Base{Name: "Squire", HP: 30, Att: 5, Def: 4}, Mana: 5},
+		{Base: Base{Name: "Tavern Brawler", HP: 35, Att: 4, Def: 2}, Mana: 0},
+		{Base: Base{Name: "Altar Boy", HP: 14, Att: 1, Def: 1}, Mana: 15},
+
+		// Tier 2: Adepts & Adventurers
+		{Base: Base{Name: "Thief", HP: 35, Att: 9, Def: 2}, Mana: 5},
+		{Base: Base{Name: "Scout", HP: 40, Att: 7, Def: 3}, Mana: 10},
+		{Base: Base{Name: "Journeyman Mage", HP: 25, Att: 4, Def: 2}, Mana: 40},
+		{Base: Base{Name: "Acolyte", HP: 30, Att: 3, Def: 2}, Mana: 35},
+		{Base: Base{Name: "Hunter", HP: 42, Att: 8, Def: 3}, Mana: 10},
+		{Base: Base{Name: "Foot Soldier", HP: 45, Att: 8, Def: 5}, Mana: 0},
+		{Base: Base{Name: "Monk", HP: 45, Att: 7, Def: 4}, Mana: 15},
+		{Base: Base{Name: "Mercenary", HP: 50, Att: 9, Def: 4}, Mana: 0},
+		{Base: Base{Name: "Guard", HP: 55, Att: 6, Def: 6}, Mana: 0},
+		{Base: Base{Name: "Barbarian", HP: 60, Att: 10, Def: 2}, Mana: 0},
+
+		// Tier 3: Veterans & Specialists
+		{Base: Base{Name: "Wizard", HP: 45, Att: 6, Def: 3}, Mana: 80},
+		{Base: Base{Name: "Assassin", HP: 55, Att: 18, Def: 4}, Mana: 20},
+		{Base: Base{Name: "Duelist", HP: 60, Att: 15, Def: 5}, Mana: 10},
+		{Base: Base{Name: "Cleric", HP: 60, Att: 8, Def: 6}, Mana: 70},
+		{Base: Base{Name: "Spellblade", HP: 65, Att: 12, Def: 6}, Mana: 40},
+		{Base: Base{Name: "Ranger", HP: 70, Att: 14, Def: 6}, Mana: 25},
+		{Base: Base{Name: "Beastmaster", HP: 75, Att: 13, Def: 5}, Mana: 30},
+		{Base: Base{Name: "Knight", HP: 80, Att: 12, Def: 10}, Mana: 15},
+		{Base: Base{Name: "Cavalryman", HP: 85, Att: 11, Def: 8}, Mana: 0},
+		{Base: Base{Name: "Berserker", HP: 90, Att: 16, Def: 3}, Mana: 0},
+
+		// Tier 4: Masters & Elites
+		{Base: Base{Name: "Sorcerer", HP: 65, Att: 8, Def: 5}, Mana: 120},
+		{Base: Base{Name: "Warlock", HP: 75, Att: 12, Def: 6}, Mana: 110},
+		{Base: Base{Name: "Shadow", HP: 80, Att: 25, Def: 6}, Mana: 30},
+		{Base: Base{Name: "High Priest", HP: 85, Att: 10, Def: 8}, Mana: 100},
+		{Base: Base{Name: "Sniper", HP: 90, Att: 22, Def: 8}, Mana: 40},
+		{Base: Base{Name: "Bounty Hunter", HP: 100, Att: 19, Def: 9}, Mana: 20},
+		{Base: Base{Name: "Dragoon", HP: 110, Att: 20, Def: 12}, Mana: 25},
+		{Base: Base{Name: "Paladin", HP: 120, Att: 15, Def: 15}, Mana: 60},
+		{Base: Base{Name: "Gladiator", HP: 130, Att: 18, Def: 10}, Mana: 0},
+		{Base: Base{Name: "Warden", HP: 140, Att: 14, Def: 18}, Mana: 40},
+
+		// Tier 5: Legendary Champions
+		{Base: Base{Name: "Archmage", HP: 110, Att: 15, Def: 10}, Mana: 250},
+		{Base: Base{Name: "Chronomancer", HP: 120, Att: 10, Def: 8}, Mana: 300},
+		{Base: Base{Name: "Master Assassin", HP: 130, Att: 35, Def: 10}, Mana: 50},
+		{Base: Base{Name: "Saint", HP: 140, Att: 12, Def: 12}, Mana: 200},
+		{Base: Base{Name: "Grandmaster", HP: 160, Att: 28, Def: 15}, Mana: 60},
+		{Base: Base{Name: "Runesmith", HP: 180, Att: 22, Def: 22}, Mana: 100},
+		{Base: Base{Name: "Dragon Knight", HP: 200, Att: 30, Def: 25}, Mana: 80},
+		{Base: Base{Name: "Champion", HP: 220, Att: 28, Def: 18}, Mana: 40},
+		{Base: Base{Name: "Warlord", HP: 250, Att: 25, Def: 20}, Mana: 0},
+		{Base: Base{Name: "Hero of Legend", HP: 300, Att: 35, Def: 25}, Mana: 150},
+}
+
+var adversaryPool = []Adversary{
+		// Weak / Starter Enemies
+		{Base: Base{Name: "Green Slime", HP: 15, Att: 2, Def: 1}, SpcAtt: 5},
+		{Base: Base{Name: "Giant Rat", HP: 10, Att: 3, Def: 1}, SpcAtt: 4},
+		{Base: Base{Name: "Cave Bat", HP: 8, Att: 4, Def: 0}, SpcAtt: 6},
+		{Base: Base{Name: "Goblin Scout", HP: 20, Att: 4, Def: 2}, SpcAtt: 8},
+		{Base: Base{Name: "Skeleton Warrior", HP: 25, Att: 5, Def: 3}, SpcAtt: 10},
+		{Base: Base{Name: "Zombie", HP: 35, Att: 4, Def: 1}, SpcAtt: 8},
+		{Base: Base{Name: "Bandit Thug", HP: 30, Att: 6, Def: 3}, SpcAtt: 12},
+		{Base: Base{Name: "Wild Boar", HP: 40, Att: 5, Def: 4}, SpcAtt: 10},
+		{Base: Base{Name: "Kobold Miner", HP: 22, Att: 4, Def: 2}, SpcAtt: 6},
+		{Base: Base{Name: "Giant Spider", HP: 28, Att: 7, Def: 2}, SpcAtt: 15},
+
+		// Common / Low-Mid Enemies
+		{Base: Base{Name: "Orc Grunt", HP: 45, Att: 8, Def: 4}, SpcAtt: 15},
+		{Base: Base{Name: "Hobgoblin", HP: 50, Att: 7, Def: 6}, SpcAtt: 14},
+		{Base: Base{Name: "Dire Wolf", HP: 45, Att: 9, Def: 3}, SpcAtt: 18},
+		{Base: Base{Name: "Harpy", HP: 35, Att: 10, Def: 2}, SpcAtt: 20},
+		{Base: Base{Name: "Swamp Hag", HP: 55, Att: 6, Def: 4}, SpcAtt: 25},
+		{Base: Base{Name: "Cultist", HP: 30, Att: 5, Def: 2}, SpcAtt: 30},
+		{Base: Base{Name: "Animated Armor", HP: 60, Att: 8, Def: 10}, SpcAtt: 12},
+		{Base: Base{Name: "Gargoyle", HP: 70, Att: 10, Def: 8}, SpcAtt: 15},
+		{Base: Base{Name: "Lizardman", HP: 55, Att: 9, Def: 5}, SpcAtt: 16},
+		{Base: Base{Name: "Bandit Captain", HP: 75, Att: 12, Def: 6}, SpcAtt: 25},
+
+		// Medium / Mid-Tier Enemies
+		{Base: Base{Name: "Minotaur", HP: 120, Att: 15, Def: 6}, SpcAtt: 30},
+		{Base: Base{Name: "Centaur Archer", HP: 80, Att: 12, Def: 4}, SpcAtt: 20},
+		{Base: Base{Name: "Ogre", HP: 150, Att: 14, Def: 5}, SpcAtt: 25},
+		{Base: Base{Name: "Cave Troll", HP: 140, Att: 16, Def: 8}, SpcAtt: 35},
+		{Base: Base{Name: "Fire Elemental", HP: 90, Att: 18, Def: 3}, SpcAtt: 40},
+		{Base: Base{Name: "Water Elemental", HP: 100, Att: 12, Def: 8}, SpcAtt: 25},
+		{Base: Base{Name: "Earth Elemental", HP: 160, Att: 10, Def: 15}, SpcAtt: 20},
+		{Base: Base{Name: "Air Elemental", HP: 85, Att: 15, Def: 4}, SpcAtt: 30},
+		{Base: Base{Name: "Dark Wizard", HP: 60, Att: 8, Def: 3}, SpcAtt: 60},
+		{Base: Base{Name: "Necromancer", HP: 75, Att: 6, Def: 4}, SpcAtt: 55},
+
+		// Hard / High-Tier Enemies
+		{Base: Base{Name: "Vampire Spawn", HP: 90, Att: 14, Def: 6}, SpcAtt: 35},
+		{Base: Base{Name: "Werewolf", HP: 110, Att: 16, Def: 5}, SpcAtt: 40},
+		{Base: Base{Name: "Banshee", HP: 65, Att: 10, Def: 2}, SpcAtt: 50},
+		{Base: Base{Name: "Wraith", HP: 70, Att: 12, Def: 1}, SpcAtt: 45},
+		{Base: Base{Name: "Bone Golem", HP: 180, Att: 14, Def: 10}, SpcAtt: 20},
+		{Base: Base{Name: "Stone Golem", HP: 250, Att: 18, Def: 18}, SpcAtt: 25},
+		{Base: Base{Name: "Iron Golem", HP: 300, Att: 22, Def: 25}, SpcAtt: 30},
+		{Base: Base{Name: "Manticore", HP: 160, Att: 18, Def: 8}, SpcAtt: 40},
+		{Base: Base{Name: "Chimera", HP: 200, Att: 20, Def: 10}, SpcAtt: 45},
+		{Base: Base{Name: "Griffon", HP: 130, Att: 16, Def: 6}, SpcAtt: 30},
+
+		// Elite / Boss-Tier Enemies
+		{Base: Base{Name: "Basilisk", HP: 140, Att: 14, Def: 12}, SpcAtt: 60},
+		{Base: Base{Name: "Frost Giant", HP: 350, Att: 28, Def: 15}, SpcAtt: 50},
+		{Base: Base{Name: "Fire Giant", HP: 380, Att: 30, Def: 18}, SpcAtt: 65},
+		{Base: Base{Name: "Mind Flayer", HP: 120, Att: 10, Def: 5}, SpcAtt: 80},
+		{Base: Base{Name: "Beholder", HP: 220, Att: 15, Def: 10}, SpcAtt: 100},
+		{Base: Base{Name: "Death Knight", HP: 400, Att: 35, Def: 20}, SpcAtt: 70},
+		{Base: Base{Name: "Lich", HP: 250, Att: 12, Def: 15}, SpcAtt: 120},
+		{Base: Base{Name: "Young Red Dragon", HP: 500, Att: 40, Def: 20}, SpcAtt: 150},
+		{Base: Base{Name: "Adult Black Dragon", HP: 800, Att: 55, Def: 30}, SpcAtt: 200},
+		{Base: Base{Name: "Demon Lord", HP: 1000, Att: 65, Def: 35}, SpcAtt: 250},
+	}
+
+	var weaponArmory = []Weapon{
+		{name: "Wooden Sword", attackDamage: 3},
+		{name: "Rusty Dagger", attackDamage: 5},
+		{name: "Oak Staff", attackDamage: 8},
+		{name: "Iron Shortsword", attackDamage: 10},
+		{name: "Spiked Club", attackDamage: 11},
+		{name: "Hunter's Bow", attackDamage: 12},
+		{name: "Iron Mace", attackDamage: 14},
+		{name: "Crystal Wand", attackDamage: 15},
+		{name: "Venomous Dirk", attackDamage: 16},
+		{name: "Steel Longsword", attackDamage: 18},
+		{name: "Heavy Crossbow", attackDamage: 20},
+		{name: "Steel Halberd", attackDamage: 22},
+		{name: "Mithril Rapier", attackDamage: 25},
+		{name: "Valkyrie Spear", attackDamage: 26},
+		{name: "Elven Longbow", attackDamage: 28},
+		{name: "Shadow Blade", attackDamage: 32},
+		{name: "Pyromancer's Staff", attackDamage: 35},
+		{name: "Dwarven Warhammer", attackDamage: 38},
+		{name: "Obsidian Greatsword", attackDamage: 40},
+		{name: "Dragonbone Axe", attackDamage: 50},
+	}
