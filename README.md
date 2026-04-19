@@ -13,11 +13,17 @@ A lightweight, terminal-based RPG combat simulator built entirely in Go. This pr
 
 ```text
 gladiator/
+├── core/
+│   └── battle.go       # Contains the main combat loop and RNG turn logic
+├── model/
+│   ├── adversary.go    # Adversary struct and special attack logic
+│   ├── base.go         # Base stats and shared methods for combatants
+│   ├── hero.go         # Hero struct, equipment logic, and mana attacks
+│   ├── interfaces.go   # Defines the Fighter interface used by the battle system
+│   ├── pool.go         # Global slices holding the weapon, hero, and enemy databases
+│   └── weapon.go       # Weapon structs and generation logic
+├── .gitignore          # Ignored files for Git
+├── go.mod              # Go module dependencies and configuration
+├── LICENSE             # MIT License
 ├── main.go             # Entry point, initializes the combatants and starts the game
-├── battle/
-│   └── battle.go       # Contains the battle loop and RNG turn logic
-└── model/
-    ├── base.go         # Defines the Fighter interface and base stats
-    ├── hero.go         # Hero struct, equipment logic, and Special Attack
-    ├── adversary.go    # Adversary struct and Special Attack
-    └── pool.go         # Global slices holding the weapon, hero, and enemy databases
+└── README.md           # Project documentation
