@@ -1,4 +1,4 @@
-package model
+package gameplay
 
 import (
 	"fmt"

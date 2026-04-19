@@ -1,4 +1,4 @@
-package model
+package gameplay
 
 var heroPool = []Hero{
 		// Tier 1: Novices & Commoners

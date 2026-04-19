@@ -2,15 +2,15 @@ package core
 
 import (
 	"fmt"
-	"gladiator/model"
+	"gladiator/internal/gameplay"
 	"math/rand/v2"
 	"time"
 )
 
 // battle now accepts any struct that satisfies the model.Fighter interface
-func Battle(p1 model.Fighter, p2 model.Fighter) {
+func Battle(p1 gameplay.Fighter, p2 gameplay.Fighter) {
 	var turnCounter = 0
-	var attacker, defender model.Fighter
+	var attacker, defender gameplay.Fighter
 
 	for p1.GetHP() > 0 && p2.GetHP() > 0 {
 		// Add a tiny sleep so the terminal output doesn't instantly vanish
@@ -25,7 +25,7 @@ func Battle(p1 model.Fighter, p2 model.Fighter) {
 		fmt.Printf("\n--- %s's Turn ---\n", attacker.GetName())
 
 		// Start with base attack damage
-		totalDamage := attacker.GetAtt()
+		totalDamage := attacker.GetAttackPower()
 
 		// Roll for special attack
 		if doSpecialAttack() {
@@ -35,7 +35,7 @@ func Battle(p1 model.Fighter, p2 model.Fighter) {
 		}
 
 		// Calculate final damage mitigated by defense
-		actualDamage := totalDamage - defender.GetDef()
+		actualDamage := totalDamage - defender.GetDefense()
 		if actualDamage < 0 {
 			actualDamage = 0
 		}

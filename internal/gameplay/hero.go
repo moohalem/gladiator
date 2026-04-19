@@ -1,4 +1,4 @@
-package model
+package gameplay
 
 import (
 	"fmt"
@@ -19,7 +19,7 @@ func GenerateRandomHero() *Hero {
 		selectedHero.Weapon = *SelectRandomWeapon()
 		fmt.Printf("%s is equipped with the %s weapon!\n", selectedHero.Name, selectedHero.Weapon.name)
 		selectedHero.Att += selectedHero.Weapon.attackDamage
-		fmt.Printf("The weapon boosted %s's attack %d points.", selectedHero.name, selectedHero.Weapon.attackDamage)
+		fmt.Printf("The weapon boosted %s's attack %d points.", selectedHero.Name, selectedHero.Weapon.attackDamage)
 		return &selectedHero
 	}
 	fmt.Printf("%s is unarmed!", selectedHero.Name)
