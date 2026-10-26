@@ -5,12 +5,12 @@ import (
 	"math/rand/v2"
 )
 
-type Adversary struct{
+type Adversary struct {
 	Base
 	SpcAtt int
 }
 
-func GenerateRandomAdversary() *Adversary{
+func GenerateRandomAdversary() *Adversary {
 	randomIndex := rand.IntN(len(adversaryPool))
 	selectedAdversary := adversaryPool[randomIndex]
 	return &selectedAdversary

@@ -5,7 +5,7 @@ import (
 	"math/rand/v2"
 )
 
-type Hero struct{
+type Hero struct {
 	Base
 	Weapon
 	Mana int
@@ -15,7 +15,7 @@ func GenerateRandomHero() *Hero {
 	randomIndex := rand.IntN(len(heroPool))
 	selectedHero := heroPool[randomIndex]
 
-	if isWeaponEquip() {
+	if isEquipWeapon() {
 		selectedHero.Weapon = *SelectRandomWeapon()
 		fmt.Printf("%s is equipped with the %s weapon!\n", selectedHero.Name, selectedHero.Weapon.name)
 		selectedHero.Att += selectedHero.Weapon.attackDamage
@@ -26,13 +26,10 @@ func GenerateRandomHero() *Hero {
 	return &selectedHero
 }
 
-func isWeaponEquip() bool {
+func isEquipWeapon() bool {
 	weaponProbability := 0.1
 	randomFloat := rand.Float64()
-	if randomFloat < weaponProbability {
-		return true
-	}
-	return false
+	return randomFloat < weaponProbability
 }
 
 func (h *Hero) SpecialAttack() int {

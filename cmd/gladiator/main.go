@@ -5,7 +5,7 @@ import (
 	"gladiator/internal/gameplay"
 )
 
-func main(){
+func main() {
 	hero := gameplay.GenerateRandomHero()
 	adversary := gameplay.GenerateRandomAdversary()
 

@@ -1,15 +1,18 @@
+// Package core implements the battle simulation logic, specifically managing the
+// execution of battle encounters between gameplay fighters.
 package core
 
 import (
 	"fmt"
-	"gladiator/internal/gameplay"
 	"math/rand/v2"
 	"time"
+
+	"gladiator/internal/gameplay"
 )
 
 // battle now accepts any struct that satisfies the model.Fighter interface
 func Battle(p1 gameplay.Fighter, p2 gameplay.Fighter) {
-	var turnCounter = 0
+	turnCounter := 0
 	var attacker, defender gameplay.Fighter
 
 	for p1.GetHP() > 0 && p2.GetHP() > 0 {
